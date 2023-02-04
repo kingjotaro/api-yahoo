@@ -34,9 +34,10 @@ mongoose.connect(`mongodb+srv://${user}:${password}@cluster0.qrw4pbb.mongodb.net
     
     .then(() => {
         console.log('conected mongodb')
-        const PORT = process.env.PORT || 3000;
+        app.listen(process.env.PORT || 3000, () => {
+            console.log('backend running')
+        })
         console.log("Listening on port: ", PORT);
-        app.listen(PORT);
 
     })
     .catch((err) => console.log(err))
