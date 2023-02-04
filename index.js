@@ -34,9 +34,9 @@ mongoose.connect(`mongodb+srv://${user}:${password}@cluster0.qrw4pbb.mongodb.net
     
     .then(() => {
         console.log('conected mongodb')
-        const port = process.env.PORT || 3000;
+        const PORT = process.env.PORT || 3000;
         console.log("Listening on port: ", port);
-        app.listen(port);
+        app.listen(PORT);
 
     })
     .catch((err) => console.log(err))
