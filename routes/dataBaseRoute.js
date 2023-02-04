@@ -27,7 +27,7 @@ router.post('/', async (req, res) => {
 })
 // leitura de dados
 router.get('/', async(req, res) => {
-
+    console.log('get rodando')
     try {
         const data =  await Database.find()
 
