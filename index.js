@@ -2,6 +2,7 @@
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
+
 require('dotenv').config()
 mongoose.set('strictQuery', true);
 
@@ -33,7 +34,8 @@ mongoose.connect(`mongodb+srv://${user}:${password}@cluster0.qrw4pbb.mongodb.net
     
     .then(() => {
         console.log('conected mongodb')
-        app.listen(process.env.PORT || 3000)
+       const PORT = process.env.PORT || 3000;
+        app.listen(PORT);
     })
     .catch((err) => console.log(err))
 
